@@ -47,9 +47,9 @@ const BottomTabbar = (props) => {
 
             return <Icon name={iconName} size={size} color={color} />;
           },
-        tabBarActiveTintColor: '#CF76DD',
+        tabBarActiveTintColor: '#905CFF',
         tabBarInactiveTintColor: '#000',
-        tabBarActiveBackgroundColor:'#FFE7EA',
+        tabBarActiveBackgroundColor:'#EEE6FF',
           tabBarStyle: {
             height: 60,
               paddingBottom: 10,
