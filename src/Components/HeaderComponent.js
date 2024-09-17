@@ -9,7 +9,7 @@ const HeaderComponent = (props) => {
   return (
       <View style={styles.iconstyle}>
           <TouchableOpacity> 
-          <Icon name={'reorder-three'} size={22} color={'#FFFFFF'} />
+          <Icon name={'reorder-three'} size={28} color={'#FFFFFF'} />
           </TouchableOpacity>
           {props?.logo && 
               <TouchableOpacity onPress={props?.nav}>
@@ -39,18 +39,19 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignSelf: 'center',
         width: width * 0.9,
-        marginTop:12
+        marginTop:4,
+        alignItems:'center'
     },
    
     logostyle: {
-        height: 20,
-        width: 20,
+        height: 22,
+        width: 22,
         resizeMode: 'contain',
         marginRight: 5,
     },
     Dotstyle: {
-        height: 8,
-        width: 8,
+        height: 9,
+        width: 9,
         resizeMode: 'contain',
         alignSelf: 'flex-end',
         position: 'absolute',
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
         paddingVertical:6
     },
     bellstyle: {
-        width: 20,
+        width: 22,
         height: 20,
         resizeMode:'cover'
     }

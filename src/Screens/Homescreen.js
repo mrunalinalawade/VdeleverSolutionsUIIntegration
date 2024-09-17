@@ -43,8 +43,8 @@ const Homescreen = props => {
     
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <StatusBar
-        barStyle="light-content" // Options: 'default', 'light-content', 'dark-content'
-        backgroundColor="#9766FF" // For Android
+        barStyle="light-content" 
+        backgroundColor="#9766FF" 
       />
       <LinearGradient colors={['#9766FF', '#F7F3FF']} style={styles.header}>
       
@@ -66,7 +66,7 @@ const Homescreen = props => {
       </View>
       <View
         style={{
-          marginTop: -6,
+          marginTop: -20,
           backgroundColor: '#FFFFFF',
           borderTopLeftRadius: 30,
         }}>
@@ -230,7 +230,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 20,
     width: width * 0.8,
     marginTop: -80,
-    paddingBottom: 24,
+    paddingBottom: 58,
   },
 
   wlctxt: {

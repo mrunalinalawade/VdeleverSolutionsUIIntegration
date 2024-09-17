@@ -50,8 +50,8 @@ const HomeScreenmain = props => {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <StatusBar
-        barStyle="light-content" // Options: 'default', 'light-content', 'dark-content'
-        backgroundColor="#FFB5B1" // For Android
+        barStyle="light-content" 
+        backgroundColor="#FFB5B1"
       />
       <LinearGradient colors={['#FFB5B1', '#CD7ED9']} style={styles.header}>
         <HeaderComponent logo bell nav={() => { props?.navigation.navigate('BottomTabbar')}} />
