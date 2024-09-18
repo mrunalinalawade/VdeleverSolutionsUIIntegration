@@ -48,7 +48,7 @@ const Homescreen = props => {
       />
       <LinearGradient colors={['#9766FF', '#F7F3FF']} style={styles.header}>
       
-        <HeaderComponent logo2 nav2={() => { props?.navigation?.navigate('HomeScreenmain')}} />
+        <HeaderComponent logo2 nav2={() => { props?.navigation?.navigate('BottomTabbar1')}} />
       </LinearGradient>
       <View style={styles.welcomboxstyle}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>

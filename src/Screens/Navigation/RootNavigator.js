@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Homescreen from '../Homescreen';
 import BottomTabbar from './BottomTabbar';
 import HomeScreenmain from '../HomeScreenmain';
+import BottomTabbar1 from './Bottomtabbar1';
 
 
 
@@ -15,6 +16,7 @@ const RootNavigator = (props) => {
         <Stack.Screen name="Homescreen" component={Homescreen} />
       <Stack.Screen name="HomeScreenmain" component={HomeScreenmain} />
         <Stack.Screen name="BottomTabbar" component={BottomTabbar} />
+        <Stack.Screen name="BottomTabbar1" component={BottomTabbar1} />
      
        
       </Stack.Navigator>

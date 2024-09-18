@@ -28,7 +28,7 @@ const ProfileScreen = () => (
   </View>
 );
 
-const BottomTabbar = (props) => {
+const BottomTabbar1 = (props) => {
   return (
     // <NavigationContainer>
       <Tab.Navigator
@@ -47,9 +47,9 @@ const BottomTabbar = (props) => {
 
             return <Icon name={iconName} size={size} color={color} />;
           },
-        tabBarActiveTintColor: '#905CFF',
+        tabBarActiveTintColor: '#CF76DD',
         tabBarInactiveTintColor: '#000',
-        tabBarActiveBackgroundColor:'#EEE6FF',
+        tabBarActiveBackgroundColor:'#FFE7EA',
           tabBarStyle: {
             height: 60,
               paddingBottom: 10,
@@ -67,8 +67,6 @@ const BottomTabbar = (props) => {
             alignItems: 'center',
             justifyContent: 'center',
             borderRadius: 30,
-            flexDirection:'row'
-            
            
            
           },
@@ -77,7 +75,7 @@ const BottomTabbar = (props) => {
         
           )}
       >
-      <Tab.Screen name="Home" component={Homescreen} options={{ tabBarBadge: null,headerShown:false }}  />
+      <Tab.Screen name="Home" component={HomeScreenmain} options={{ tabBarBadge: null,headerShown:false }}  />
         <Tab.Screen name="Search" component={SearchScreen} />
         <Tab.Screen name="Play" component={PlayScreen} />
         <Tab.Screen name="Profile" component={ProfileScreen} />
@@ -86,7 +84,7 @@ const BottomTabbar = (props) => {
   );
 };
 
-export default BottomTabbar;
+export default BottomTabbar1;
 
 
 
