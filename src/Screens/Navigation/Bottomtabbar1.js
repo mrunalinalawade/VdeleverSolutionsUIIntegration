@@ -50,26 +50,36 @@ const BottomTabbar1 = (props) => {
         tabBarActiveTintColor: '#CF76DD',
         tabBarInactiveTintColor: '#000',
         tabBarActiveBackgroundColor:'#FFE7EA',
-          tabBarStyle: {
-            height: 60,
-              paddingBottom: 10,
-            
-          },
-          tabBarLabelStyle: {
-            fontSize: 12,
-            
-          },
-          tabBarIconStyle: {
-            marginTop: 5,
-            
-          },
-          tabBarItemStyle: {
-            alignItems: 'center',
-            justifyContent: 'center',
-            borderRadius: 30,
-           
-           
-          },
+        tabBarStyle: {
+          height: 60,
+            paddingBottom: 10,
+         
+          
+        },
+        tabBarLabelStyle: {
+          fontSize: 12,
+          right:14
+          
+        },
+        tabBarIconStyle: {
+        
+          alignItems: 'center',
+          justifyContent: 'center',
+          right:5
+          
+        },
+        tabBarItemStyle: {
+          marginTop: 4,
+          alignItems: 'center',
+          justifyContent: 'center',
+          borderRadius: 30,
+          flexDirection:'row',
+     
+         
+          
+         
+         
+        },
           tabBarBadge: route.name === 'Home' ? null : undefined,
           }
         

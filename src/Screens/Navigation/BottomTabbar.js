@@ -53,21 +53,29 @@ const BottomTabbar = (props) => {
           tabBarStyle: {
             height: 60,
               paddingBottom: 10,
+           
             
           },
           tabBarLabelStyle: {
             fontSize: 12,
+            right:14
             
           },
           tabBarIconStyle: {
-            marginTop: 5,
+          
+            alignItems: 'center',
+            justifyContent: 'center',
+            right:5
             
           },
           tabBarItemStyle: {
+            marginTop: 4,
             alignItems: 'center',
             justifyContent: 'center',
             borderRadius: 30,
-            flexDirection:'row'
+            flexDirection:'row',
+       
+           
             
            
            

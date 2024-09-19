@@ -32,23 +32,23 @@ const Homescreen = props => {
     setSearchQuery(text);
   };
 
-
   const sectors = [
-    { id: '1', title: 'Home Services', image: IMAGEPATH.Sector1 },
-    { id: '2', title: 'Healthcare', image: IMAGEPATH.Sector2 },
-    { id: '3', title: 'Home Services', image: IMAGEPATH.Sector1 },
-  ]
-  
+    {id: '1', title: 'Home Services', image: IMAGEPATH.Sector1},
+    {id: '2', title: 'Healthcare', image: IMAGEPATH.Sector2},
+    {id: '3', title: 'Home Services', image: IMAGEPATH.Sector1},
+  ];
+
   return (
-    
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-      <StatusBar
-        barStyle="light-content" 
-        backgroundColor="#9766FF" 
-      />
+      <StatusBar barStyle="light-content" backgroundColor="#9766FF" />
       <LinearGradient colors={['#9766FF', '#F7F3FF']} style={styles.header}>
-      
-        <HeaderComponent logo2 nav2={() => { props?.navigation?.navigate('BottomTabbar1')}} />
+        <HeaderComponent
+        menu
+          logo2
+          nav2={() => {
+            props?.navigation?.navigate('BottomTabbar1');
+          }}
+        />
       </LinearGradient>
       <View style={styles.welcomboxstyle}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
@@ -59,9 +59,16 @@ const Homescreen = props => {
           <Image source={IMAGEPATH.Circles} style={styles.Circletyle} />
         </View>
         <View style={{marginLeft: 15}}>
-          <SerachBarr value={searchQuery} onChange={handleSearchChange} iconcolor={'#FF8A00'}
-            placeholdercolor={'#959595'} backgroundColor={'#FFFFFF'} width={width * 0.6} inputwidth={width*0.4}
-           />
+          <SerachBarr
+            value={searchQuery}
+            onChange={handleSearchChange}
+            iconcolor={'#FF8A00'}
+            fontSize={12}
+            placeholdercolor={'#959595'}
+            backgroundColor={'#FFFFFF'}
+            width={width * 0.6}
+            inputwidth={width * 0.4}
+          />
         </View>
       </View>
       <View
@@ -73,7 +80,11 @@ const Homescreen = props => {
         <View style={styles.subhead}>
           <Text style={styles.exporetxt}>Explore Categories</Text>
           <TouchableOpacity>
-            <EntypoIcon name={'dots-three-horizontal'} size={22} color={'#000'} />
+            <EntypoIcon
+              name={'dots-three-horizontal'}
+              size={22}
+              color={'#000'}
+            />
           </TouchableOpacity>
         </View>
         <View
@@ -89,6 +100,8 @@ const Homescreen = props => {
             gradientcolor={['#FFFFFF', '#CBE0FF']}
             bodercolor={'#CBE0FF'}
             width={width * 0.34}
+            color={'#333333'}
+            fontSize={12}
           />
           <Categories
             text={'Entertainment'}
@@ -96,6 +109,8 @@ const Homescreen = props => {
             gradientcolor={['#FFFFFF', '#FFE9BE']}
             bodercolor={'#FFE9BE'}
             width={width * 0.37}
+            color={'#333333'}
+            fontSize={12}
           />
         </View>
         <View
@@ -112,7 +127,11 @@ const Homescreen = props => {
             gradientcolor={['#FFFFFF', '#FFB0DD']}
             bodercolor={'#FFB0DD'}
             width={width * 0.29}
-            nav3={() =>{props?.navigation.navigate('HomeScreenmain')}}
+            color={'#333333'}
+            fontSize={12}
+            nav3={() => {
+              props?.navigation.navigate('BottomTabbar1');
+            }}
           />
           <Categories
             text={'Home Care'}
@@ -120,6 +139,8 @@ const Homescreen = props => {
             gradientcolor={['#FFFFFF', '#C0FCF6']}
             bodercolor={'#00FFE6'}
             width={width * 0.32}
+            color={'#333333'}
+            fontSize={12}
           />
           <Categories
             text={'Events'}
@@ -127,6 +148,8 @@ const Homescreen = props => {
             gradientcolor={['#FFFFFF', '#FFC8AB']}
             bodercolor={'#FFC8AB'}
             width={width * 0.25}
+            color={'#333333'}
+            fontSize={12}
           />
         </View>
         <View
@@ -143,6 +166,8 @@ const Homescreen = props => {
             gradientcolor={['#FFFFFF', '#CFCFFF']}
             bodercolor={'#CFCFFF'}
             width={width * 0.32}
+            color={'#333333'}
+            fontSize={12}
           />
         </View>
 
@@ -154,32 +179,33 @@ const Homescreen = props => {
         <FlatList
           horizontal={true}
           data={sectors}
-          renderItem={({ item }) => (
+          renderItem={({item}) => (
             <View>
               <ImageBackground
                 source={item?.image}
                 style={[styles.image]}
-                imageStyle={{ borderRadius: 30 }}>
+                imageStyle={{borderRadius: 30}}>
                 <Text style={styles.title}>{item?.title}</Text>
               </ImageBackground>
             </View>
           )}
           keyExtractor={item => item.id}
-         
           contentContainerStyle={styles.flatList1}
         />
-
 
         <View style={styles.subhead}>
           <Text style={styles.exporetxt}>Recommended for you</Text>
           <TouchableOpacity>
-            <EntypoIcon name={'dots-three-horizontal'} size={22} color={'#000'} />
+            <EntypoIcon
+              name={'dots-three-horizontal'}
+              size={22}
+              color={'#000'}
+            />
           </TouchableOpacity>
         </View>
         <RecommendedCard />
-        <View style={{marginTop:15}}>
-
-        <RecommendedCard/>
+        <View style={{marginTop: 15}}>
+          <RecommendedCard />
         </View>
       </View>
     </ScrollView>
@@ -190,7 +216,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    // marginBottom:10
+    marginBottom: 3,
   },
   header: {
     padding: 10,
@@ -203,8 +229,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   Circletyle: {
-    height: 80,
-    width: 80,
+    height: 90,
+    width: 90,
     resizeMode: 'contain',
     alignSelf: 'flex-start',
     marginTop: -11,
@@ -234,16 +260,17 @@ const styles = StyleSheet.create({
   },
 
   wlctxt: {
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: '400',
     color: '#000000',
     lineHeight: 18,
   },
   dreamtxt: {
-    fontSize: 16,
-    fontWeight: '700',
+    fontSize: 24,
+    marginTop: '5 %',
+    fontWeight: '400',
     color: '#000000',
-    lineHeight: 22,
+    lineHeight: 24,
   },
   subhead: {
     width: width * 0.9,
@@ -251,28 +278,33 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignSelf: 'center',
     paddingVertical: 15,
-    marginTop:8
+    marginTop: 8,
   },
   exporetxt: {
-    fontSize: 16,
-    fontWeight: '700',
+    fontSize: 14,
+    fontWeight: '800',
     color: '#000000',
   },
   bgimgstyle: {
     height: 100,
     width: 100,
   },
-  title: { color: '#000', fontSize: 18, fontWeight: '800', margin: 15,width:width*0.3 },
+  title: {
+    color: '#000',
+    fontSize: 18,
+    fontWeight: '800',
+    margin: 15,
+    width: width * 0.3,
+  },
   image: {
-    width: 160,
+    width: 170,
     height: 160,
     resizeMode: 'cover',
     alignItems: 'center',
-    marginHorizontal:7
+    marginHorizontal: 7,
   },
   flatList1: {
     paddingHorizontal: 5,
- 
   },
 });
 

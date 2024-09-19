@@ -34,5 +34,7 @@ export const IMAGEPATH = {
    PetAdoption: require('../Images/PetAdoption.png'),
    Sector1: require('../Images/Sector1.png'),
    Sector2: require('../Images/Sector2.png'),
+   linev:require('../Images/linev.png'),
+   Priti:require('../Images/priti.png')
     
 }

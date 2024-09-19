@@ -27,21 +27,65 @@ const HomeScreenmain = props => {
   const handleSearchChange = text => {
     setSearchQuery(text);
   };
-
-  const services = [
-    {id: '1', title: 'Pet Grooming', image: IMAGEPATH.PetGrooming},
-    {id: '2', title: 'Pet Walking', image: IMAGEPATH.Petwalking},
-    {id: '3', title: 'Pet Dating', image: IMAGEPATH.Petdating},
-    {id: '4', title: 'Pet Training', image: IMAGEPATH.Petrainig},
-    {id: '5', title: 'Pet Adoption', image: IMAGEPATH.PetAdoption},
+  
+  const Data = [
+    {id: '1', title: 'Pooja Jain',title1:'Lorem ipsum dolor sit amet consectetur. Eget commodo ipsum.', image: IMAGEPATH.Girl1},
+    {id: '2', title: 'Pooja Jain',title1:'Lorem ipsum dolor sit amet consectetur. Eget commodo ipsum.', image: IMAGEPATH.Priti},
+    {id: '3', title: 'Pooja Jain',title1:'Lorem ipsum dolor sit amet consectetur. Eget commodo ipsum.',image: IMAGEPATH.Girl1},
+    {id: '3', title: 'Pooja Jain',title1:'Lorem ipsum dolor sit amet consectetur. Eget commodo ipsum.',image: IMAGEPATH.Priti},
   ];
 
-  const ServiceItem = ({title, image}) => (
+  const services = [
+    {
+      id: '1',
+      title: 'Pet Grooming',
+      image: IMAGEPATH.PetGrooming,
+      width: 155,
+      height: 190,
+    },
+    {
+      id: '2',
+      title: 'Pet Walking',
+      image: IMAGEPATH.Petwalking,
+      width: 155,
+      height: 135,
+    },
+    {
+      id: '3',
+      title: 'Pet Dating',
+      image: IMAGEPATH.Petdating,
+      width: 155,
+      height: 135,
+    },
+    {
+      id: '4',
+      title: 'Pet Training',
+      image: IMAGEPATH.Petrainig,
+      width: 155,
+      height: 190,
+    },
+    {
+      id: '5',
+      title: 'Pet Adoption',
+      image: IMAGEPATH.PetAdoption,
+      width: 155,
+      height: 190,
+    },
+  ];
+
+  const ServiceItem = ({title, image, height, width}) => (
     <View style={styles.item}>
+      {/* <ImageBackground
+        source={image}
+        // style={[styles.image]}
+        imageStyle={{borderRadius: 30}}
+        >
+        <Text style={styles.title}>{title}</Text>
+      </ImageBackground> */}
       <ImageBackground
         source={image}
-        style={[styles.image]}
-        imageStyle={{borderRadius: 30}}>
+        style={[styles.image, {height: height, width: width}]}
+        imageStyle={{borderRadius: 20}}>
         <Text style={styles.title}>{title}</Text>
       </ImageBackground>
     </View>
@@ -49,12 +93,16 @@ const HomeScreenmain = props => {
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-      <StatusBar
-        barStyle="light-content" 
-        backgroundColor="#FFB5B1"
-      />
+      <StatusBar barStyle="light-content" backgroundColor="#FFB5B1" />
       <LinearGradient colors={['#FFB5B1', '#CD7ED9']} style={styles.header}>
-        <HeaderComponent logo bell nav={() => { props?.navigation.navigate('BottomTabbar')}} />
+        <HeaderComponent
+          menu1
+          logo
+          bell
+          nav={() => {
+            props?.navigation.navigate('BottomTabbar');
+          }}
+        />
         <View style={styles.viewstyle1}>
           <View style={{marginLeft: 15}}>
             <Text style={styles.txt1}>Hello,</Text>
@@ -72,7 +120,7 @@ const HomeScreenmain = props => {
         </View>
       </LinearGradient>
       <View style={styles.Outerview}>
-        <View style={{marginTop: height * 0.05}}>
+        <View style={{marginTop: height * 0.04}}>
           <SerachBarr
             value={searchQuery}
             onChange={handleSearchChange}
@@ -113,24 +161,37 @@ const HomeScreenmain = props => {
         <View style={styles.subhead}>
           <Text style={styles.exporetxt}>Popular Services</Text>
           <TouchableOpacity>
-          <EntypoIcon name={'dots-three-horizontal'} size={22} color={'#000'} />
+            <EntypoIcon
+              name={'dots-three-horizontal'}
+              size={22}
+              color={'#000'}
+            />
           </TouchableOpacity>
         </View>
 
         <FlatList
           data={services}
           renderItem={({item}) => (
-            <ServiceItem title={item.title} image={item.image} />
+            <ServiceItem
+              title={item.title}
+              image={item.image}
+              width={item.width}
+              height={item.height}
+            />
           )}
           keyExtractor={item => item.id}
           numColumns={2}
           contentContainerStyle={styles.flatList1}
         />
 
-        <View style={[styles.subhead,{marginTop:0}]}>
+        <View style={[styles.subhead, {marginTop: 0}]}>
           <Text style={styles.exporetxt}>Service Providers</Text>
           <TouchableOpacity>
-            <EntypoIcon name={'dots-three-horizontal'} size={22} color={'#000'} />
+            <EntypoIcon
+              name={'dots-three-horizontal'}
+              size={22}
+              color={'#000'}
+            />
           </TouchableOpacity>
         </View>
 
@@ -165,7 +226,11 @@ const HomeScreenmain = props => {
         <View style={styles.subhead}>
           <Text style={styles.exporetxt}>Rating</Text>
           <TouchableOpacity>
-            <EntypoIcon name={'dots-three-horizontal'} size={22} color={'#000'} />
+            <EntypoIcon
+              name={'dots-three-horizontal'}
+              size={22}
+              color={'#000'}
+            />
           </TouchableOpacity>
         </View>
 
@@ -178,11 +243,20 @@ const HomeScreenmain = props => {
         </View>
         <View style={styles.flatlistview}>
           <FlatList
-            data={[1, 2, 3, 4]}
+            data={Data}
             renderItem={({item}) => (
               <View style={styles.mainview}>
-                <View style={{padding: 15}}>
-                  <Text style={styles.nametxt}>Pooja Jain</Text>
+                <Image
+                  source={IMAGEPATH.linev}
+                  style={{
+                    width: 80,
+                    height: 120,
+                    borderBottomLeftRadius: 15,
+                    borderTopLeftRadius: 15,
+                  }}
+                />
+                <View style={{padding: 15, position: 'absolute'}}>
+                  <Text style={styles.nametxt}>{item?.title}</Text>
                   <View style={styles.bonestyle}>
                     <Image source={IMAGEPATH.Bone} style={styles.Bonestyle} />
                     <Image source={IMAGEPATH.Bone} style={styles.Bonestyle} />
@@ -194,10 +268,10 @@ const HomeScreenmain = props => {
                     />
                   </View>
                   <Text style={styles.paratext}>
-                    Lorem ipsum dolor sit amet consectetur. Eget commodo ipsum.
+                   {item?.title1}
                   </Text>
                 </View>
-                <Image source={IMAGEPATH.Girl1} style={styles.girlstyle} />
+                <Image source={item?.image} style={styles.girlstyle} />
               </View>
             )}
             keyExtractor={item => item.id}
@@ -270,7 +344,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
-    marginTop: -22,
+    marginTop: -30,
     alignItems: 'center',
   },
   subhead: {
@@ -311,7 +385,7 @@ const styles = StyleSheet.create({
   },
   girlstyle: {
     width: 100,
-    height: 115,
+    height: 120,
     resizeMode: 'cover',
     borderTopRightRadius: 15,
     borderBottomRightRadius: 15,
@@ -354,8 +428,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   topimg: {
-    width: 50,
-    height: 50,
+    width: 70,
+    height: 58,
     resizeMode: 'cover',
     alignSelf: 'flex-end',
     borderTopRightRadius: 12,
@@ -373,10 +447,10 @@ const styles = StyleSheet.create({
   btnstyle: {
     backgroundColor: '#CF76DD',
     borderRadius: 4,
-    width: width * 0.2,
+    width: width * 0.24,
     alignItems: 'center',
-    marginTop: 8,
-    paddingVertical: 5,
+    marginTop: '6%',
+    paddingVertical: 6,
   },
   exploretxt: {
     color: '#FFF',
@@ -384,32 +458,28 @@ const styles = StyleSheet.create({
     fontWeight: '800',
   },
   bottmimg: {
-    width: 50,
-    height: 50,
+    width: 75,
+    height: 78,
     resizeMode: 'cover',
     alignSelf: 'flex-start',
     borderBottomLeftRadius: 12,
-    marginTop: -14,
+    marginTop: -40,
   },
-  title: {color: '#000', fontSize: 15, fontWeight: '500',margin:10},
+  title: {color: '#000', fontSize: 15, fontWeight: '500', margin: 18},
   image: {
-    width: 150,
-    height: 150,
     resizeMode: 'cover',
-    flex: 1,
     justifyContent: 'flex-end',
-    alignItems:'center'
+    alignItems: 'center',
   },
   flatList1: {
     paddingVertical: 10,
   },
   item: {
-    // backgroundColor: '#f9c2ff',
-    // padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 8,
-    alignItems: 'center',
-    width: 150,
-    height: 150,
+   
+    justifyContent:'center',
+    alignItems:'center',
+    marginHorizontal: 6,
+    alignItems: 'center'
+    
   },
 });
